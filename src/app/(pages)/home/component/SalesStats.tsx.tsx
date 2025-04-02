@@ -20,18 +20,30 @@ const Counter = ({ value }: { value: string }) => {
   useEffect(() => {
     let start = 0;
     const end = parseInt(value.replace(/\D/g, ""));
-    if (start === end) return;
 
-    const incrementTime = 50;
-    const step = Math.ceil(end / 50);
-    const timer = setInterval(() => {
-      start += step;
-      if (start > end) {
-        start = end;
-        clearInterval(timer);
-      }
-      setCount(start);
-    }, incrementTime);
+    let timer: NodeJS.Timeout;
+
+    const increment = () => {
+      let current = start;
+      const step = Math.ceil(end / 50);
+      timer = setInterval(() => {
+        current += step;
+        if (current > end) {
+          current = end;
+          clearInterval(timer);
+          setTimeout(() => {
+            start = 0;
+            setCount(0);
+            increment(); 
+          }, 4000); 
+        }
+        setCount(current);
+      }, 50);
+    };
+
+    increment();
+
+    return () => clearInterval(timer); 
   }, [value]);
 
   return <span>{value.includes("+") ? count + "+" : count + "%"}</span>;
