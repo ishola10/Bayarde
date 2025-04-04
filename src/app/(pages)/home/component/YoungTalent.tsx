@@ -19,72 +19,17 @@ const YoungTalent: React.FC = () => {
           play things safe.
         </p>
 
-        <div className="flex justify-center space-x-4 mt-12">
-          <div className="relative w-24 h-24 rounded-full overflow-hidden">
-            <Image
-              src="/images/person1.png"
-              alt="Person 1"
-              layout="fill"
-              objectFit="cover"
-            />
-          </div>
-          <div className="relative w-24 h-24 rounded-full overflow-hidden">
-            <Image
-              src="/images/person2.png"
-              alt="Person 2"
-              layout="fill"
-              objectFit="cover"
-            />
-          </div>
-          <div className="relative w-24 h-24 rounded-full overflow-hidden">
-            <Image
-              src="/images/person3.png"
-              alt="Person 3"
-              layout="fill"
-              objectFit="cover"
-            />
-          </div>
-          <div className="relative w-24 h-24 rounded-full overflow-hidden">
-            <Image
-              src="/images/person4.png"
-              alt="Person 4"
-              layout="fill"
-              objectFit="cover"
-            />
-          </div>
-          <div className="relative w-24 h-24 rounded-full overflow-hidden">
-            <Image
-              src="/images/person5.png"
-              alt="Person 5"
-              layout="fill"
-              objectFit="cover"
-            />
-          </div>
-          <div className="relative w-24 h-24 rounded-full overflow-hidden">
-            <Image
-              src="/images/person6.png"
-              alt="Person 6"
-              layout="fill"
-              objectFit="cover"
-            />
-          </div>
-          <div className="relative w-24 h-24 rounded-full overflow-hidden">
-            <Image
-              src="/images/person7.png"
-              alt="Person 7"
-              layout="fill"
-              objectFit="cover"
-            />
-          </div>
-
-          <div className="relative w-24 h-24 rounded-full overflow-hidden">
-            <Image
-              src="/images/person8.png"
-              alt="Person 8"
-              layout="fill"
-              objectFit="cover"
-            />
-          </div>
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-4 justify-center mx-auto max-w-4xl">
+          {["person1", "person2", "person3", "person4", "person5", "person6", "person7", "person8"].map((person, index) => (
+            <div key={index} className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden mx-auto">
+              <Image
+                src={`/images/${person}.png`}
+                alt={`Person ${index + 1}`}
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>

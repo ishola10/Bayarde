@@ -15,7 +15,7 @@ const GlobalImpact = () => {
           />
         </div>
 
-        <div className="md:w-1/2">
+        <div className="md:w-1/2 p-4 md:p-0">
           <h2 className="text-3xl md:text-5xl font-bold leading-tight font-gloock">
             How <span className="text-blue-500 font-grace">Bayarde</span> Has Globally Showed Impact Footprint Worldwide
           </h2>

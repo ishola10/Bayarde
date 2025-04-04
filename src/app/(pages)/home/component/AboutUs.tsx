@@ -26,12 +26,13 @@ const AboutUs = () => {
       </div>
 
       <div className="md:w-1/2 flex justify-center">
-        <div className="relative w-[28rem] h-96 overflow-hidden">
+        <div className="relative w-64 h-64 md:w-96 md:h-96 overflow-hidden">
           <Image
-            src="/images/AA (1).jpeg"
+            src="/images/9c633105-e30c-41a2-8732-bdc3a0bab76e (1).jpg"
             alt="Bayarde CEO"
             layout="fill"
             objectFit="cover"
+            className="rounded-full shadow-lg"
           />
         </div>
       </div>

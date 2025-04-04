@@ -34,8 +34,8 @@ const Counter = ({ value }: { value: string }) => {
           setTimeout(() => {
             start = 0;
             setCount(0);
-            increment(); 
-          }, 4000); 
+            increment();
+          }, 4000);
         }
         setCount(current);
       }, 50);
@@ -43,7 +43,7 @@ const Counter = ({ value }: { value: string }) => {
 
     increment();
 
-    return () => clearInterval(timer); 
+    return () => clearInterval(timer);
   }, [value]);
 
   return <span>{value.includes("+") ? count + "+" : count + "%"}</span>;
@@ -51,7 +51,7 @@ const Counter = ({ value }: { value: string }) => {
 
 const SalesStatistics = () => {
   return (
-    <section className="w-full mt-96">
+    <section className="w-full mt-48 md:mt-96">
       <div className="bg-black text-white max-w-4xl py-10 px-6 flex justify-center items-center text-center mx-auto">
         <div className="flex flex-col md:flex-row justify-center items-center gap-16">
           <div>
@@ -102,12 +102,12 @@ const SalesStatistics = () => {
             </div>
             <div className="flex items-start gap-3">
               <div className="p-2 bg-[#FABB18] rounded-full inline-flex items-center justify-center">
-              <Image
-                src="/icons/mission.png"
-                alt="Mission Icon"
-                width={24}
-                height={24}
-              />
+                <Image
+                  src="/icons/mission.png"
+                  alt="Mission Icon"
+                  width={24}
+                  height={24}
+                />
               </div>
               <div>
                 <h3 className="font-bold text-lg">OUR MISSION</h3>
@@ -121,13 +121,13 @@ const SalesStatistics = () => {
           </div>
         </div>
 
-        <div className="w-full md:w-1/2 flex gap-6">
-          <div className=" w-full">
+        <div className="w-full flex flex-col md:flex-row gap-6">
+          <div className="w-full md:w-1/2">
             <GraphComponent />
           </div>
 
-          <div className="flex flex-col gap-12">
-            <div className="bg-white p-4 rounded-lg shadow-md ">
+          <div className="flex flex-col gap-6 w-full md:w-1/2">
+            <div className="bg-white p-4 rounded-lg shadow-md w-full">
               <h4 className="text-sm text-gray-500">Average Talent Salary</h4>
               <h3 className="text-2xl font-bold">$1,531</h3>
               <p className="text-sm">+5.4%</p>
